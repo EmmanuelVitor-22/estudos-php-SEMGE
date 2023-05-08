@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -13,7 +13,9 @@
     <h1>Pratica 01</h1>
 
     <main>
-        <form action="" method="post">
+        <h2>GERAR NUMERO ALEATÓRIO</h2>
+
+        <form action="<?=$_SERVER['PHP_SELF']?>" method="post">
             <label for="numero">Digite um numero qualquer: </label>
             <input type="number" name="number" id="id_number">
             <input type="submit" value="Enviar">
@@ -34,5 +36,5 @@
 // echo " <a href=\"javascript:history.go(-1)\">Voltar ao formulário</a>";
     ?>
 </body>
-<p class="exibir"></p>
+
 </html>
