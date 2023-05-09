@@ -18,7 +18,7 @@
 
         <form action="<?=$_SERVER['PHP_SELF']?>" method="post">
             <label for="numero">Digite um valor em R$: </label>
-            <input type="number" name="valor" id="id_number">
+            <input type="text" name="valor" id="id_number" placeholder="0">
             <input type="submit" value="Gerar Cotação">
         </form>
     </main>
@@ -29,18 +29,22 @@ $inicio =  date("m-d-Y", strtotime("-7 days"));
 $fim =   date("m-d-Y");
 
 
-    $url = 'https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarPeriodo(dataInicial=@dataInicial,dataFinalCotacao=@dataFinalCotacao)?@dataInicial=\'05-01-2023\'&@dataFinalCotacao=\'05-08-2023\'&$top=1&$orderby=dataHoraCotacao%20desc&$format=json&$select=cotacaoCompra,dataHoraCotacao';
+    $url = 'https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarPeriodo(dataInicial=@dataInicial,dataFinalCotacao=@dataFinalCotacao)?@dataInicial=\'05-01-2023\'&@dataFinalCotacao=\'05-09-2023\'&$top=1&$orderby=dataHoraCotacao%20desc&$format=json&$select=cotacaoCompra,dataHoraCotacao';
    
     //revisar e entender isso de manipulação e tratamento de JSON 
     $dataJson = json_decode(file_get_contents($url), true);
-    $cotacao = $dataJson["value"][0]["cotacaoCompra"];
+    $cotacao = number_format(($dataJson["value"][0]["cotacaoCompra"]),2);
 
-    $valorEmReal = $_POST["valor"];
+    $valorEmReal = $_REQUEST["valor"]??0;
 
+    $valorConvertidoParaDolar  = number_format(($valorEmReal/$cotacao));
 
-    echo $valorEmReal;
-    echo "<br>";
-    echo $cotacao;
+    #formatar valores padrão
+    $padrao = numfmt_create("pt-BR", NumberFormatter::CURRENCY);
+
+    echo "<p class=\"exibir\"><strong>".numfmt_format_currency($padrao, $valorEmReal, "BRL").
+    "</strong> valem <strong>".numfmt_format_currency($padrao, $valorConvertidoParaDolar, "USD")."</strong>";
+
    ?>
 </body>
 </html>
