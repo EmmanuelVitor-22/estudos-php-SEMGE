@@ -1,5 +1,5 @@
 <?php 
-
+#aula 02 - subrotinas da alura php
 $todasAsContas = [
     "528.319.050-10"=>[
         "titular" => "Ana Silva",
@@ -32,5 +32,14 @@ $todasAsContas = [
     ]
 ];
 
+function exibirMensagem($msg){
+    echo $msg . PHP_EOL;
+}
 
-?>
+
+if (900 > $todasAsContas["528.319.050-10"]["saldo"] ) {
+   exibirMensagem("Não pode sacar");
+  
+}
+echo $todasAsContas["528.319.050-10"]["saldo"] -= 900;
+
