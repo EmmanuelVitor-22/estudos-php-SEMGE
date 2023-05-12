@@ -21,7 +21,7 @@ for ($i=1; $i < count($numero ); $i++) {
 }
 
 #usando foreach
-echo "" .PHP_EOL;
+echo ""  .PHP_EOL.PHP_EOL;
 
 echo " ************************ " .PHP_EOL;
 echo " TABUADA USANDO FOREACH" .PHP_EOL;
