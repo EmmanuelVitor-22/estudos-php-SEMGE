@@ -55,5 +55,11 @@ $todasAsContas["293.429.000-03"] = depositar($todasAsContas["293.429.000-03"], 1
 echo $todasAsContas["293.429.000-03"]["saldo"] ;
 
 foreach ($todasAsContas as $cpf => $conta) {
-    exibirMensagem( $cpf . " " . $conta["titular"] . " R$" . $conta["saldo"]);
+    // No caso de strings complexas, o array associativo funciona sem usar as aspas (somente em casos de string);
+    exibirMensagem( "$cpf -> $conta[titular] -> R$$conta[saldo]");
+}
+
+foreach ($todasAsContas as $cpf => $conta) {
+    // No caso de strings complexas, pode-se usar também entre chaves, que mantem o formato padrão 
+    exibirMensagem( "$cpf -> {$conta["titular"] }-> R${$conta["saldo"]}");
 }
