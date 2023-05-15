@@ -26,8 +26,6 @@ echo PHP_EOL;
 // A função “altera” o valor de custo para incluir o imposto sobre vendas.
 
 
-
-
 function somaImposto($taxaImposto,$custo ){
    $taxaImposto= ($taxaImposto/100);
     return $custo *= $taxaImposto;

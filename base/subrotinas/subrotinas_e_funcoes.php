@@ -32,6 +32,11 @@ $todasAsContas = [
     ]
 ];
 
+// != entre subrotina e função:
+// -SUBROTINA = executa o codigo dentro da função e não devolve valor nenhum
+// - FUNÇÃO -  executa o codigo dentro da função e devolve um valor
+
+
 #funcao de exibir mensagem
 function exibirMensagem($msg){
     echo $msg . PHP_EOL;
