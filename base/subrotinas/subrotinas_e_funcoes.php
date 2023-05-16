@@ -1,4 +1,6 @@
 <?php 
+
+include "funcoes.php";
 #aula 02 - subrotinas da alura php
 $todasAsContas = [
     "528.319.050-10"=>[
@@ -36,27 +38,11 @@ $todasAsContas = [
 // -SUBROTINA = executa o codigo dentro da função e não devolve valor nenhum
 // - FUNÇÃO -  executa o codigo dentro da função e devolve um valor
 
-
-#funcao de exibir mensagem
-function exibirMensagem($msg){
-    echo $msg . PHP_EOL;
-}
-
-#função de calcular saldo
-function sacar($conta, $valorDeSaque){
-    if ($valorDeSaque > $conta["saldo"] ) {
-        exibirMensagem("Não pode sacar");
-     }
-     else{
-        $conta["saldo"] -=$valorDeSaque;
-    }
-        return $conta;
-
-}
-
-$todasAsContas["293.429.000-03"] = sacar($todasAsContas["293.429.000-03"], 300);
-echo $todasAsContas["293.429.000-03"]["saldo"] ;
+echo "Antes do saque: {$todasAsContas["785.198.880-20"]["titular"]} -> {$todasAsContas[ "785.198.880-20"]["saldo"] }" . PHP_EOL;
+$todasAsContas[ "785.198.880-20"] = sacar($todasAsContas[ "785.198.880-20"],0.01);
+echo "Pós saque: {$todasAsContas["785.198.880-20"]["titular"]} -> {$todasAsContas[ "785.198.880-20"]["saldo"] }" . PHP_EOL . PHP_EOL;
 
 foreach ($todasAsContas as $cpf => $conta) {
-    exibirMensagem( $cpf . " " . $conta["titular"] . " R$" . $conta["saldo"]);
+    // No caso de strings complexas, o array associativo funciona sem usar as aspas (somente em casos de string);
+    exibirMensagem( "$cpf -> $conta[titular] -> R$ $conta[saldo]");
 }

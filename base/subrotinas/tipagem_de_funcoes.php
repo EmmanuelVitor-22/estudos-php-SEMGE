@@ -1,4 +1,8 @@
 <?php 
+
+
+include 'funcoes.php';
+
 #aula 02 - subrotinas da alura php
 $todasAsContas = [
     "528.319.050-10"=>[
@@ -32,34 +36,21 @@ $todasAsContas = [
     ]
 ];
 
-function exibirMensagem(String $msg){
-    echo $msg . PHP_EOL;
-}
 
 #função de deposito
 // é bom tipar os parametros da função para garanti integridade
 // e tipar a função com o tipo do retorno dela
 
-function depositar( array $conta, float $valorDeDeposito):array{
-    if ($valorDeDeposito > 0 ) {
-        $conta["saldo"] +=$valorDeDeposito;
-    }
-    else{
-        exibirMensagem("Não pode depositar nada ou valor negativo.");
-    }
-        return $conta;
-
-}
 
 $todasAsContas["293.429.000-03"] = depositar($todasAsContas["293.429.000-03"], 1003);
 echo $todasAsContas["293.429.000-03"]["saldo"] ;
 
 foreach ($todasAsContas as $cpf => $conta) {
     // No caso de strings complexas, o array associativo funciona sem usar as aspas (somente em casos de string);
-    exibirMensagem( "$cpf -> $conta[titular] -> R$$conta[saldo]");
+    exibirMensagem( "$cpf -> $conta[titular] -> R$ $conta[saldo]");
 }
 
 foreach ($todasAsContas as $cpf => $conta) {
     // No caso de strings complexas, pode-se usar também entre chaves, que mantem o formato padrão 
-    exibirMensagem( "$cpf -> {$conta["titular"] }-> R${$conta["saldo"]}");
+    exibirMensagem( "$cpf -> {$conta["titular"] }-> R$ {$conta["saldo"]}");
 }
