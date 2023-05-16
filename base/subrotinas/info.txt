@@ -12,3 +12,9 @@ Require  é usado para arquivos que são de grande importancia para o codigo.
 include_once( ) e require_once( )
     -> As funções include_once() e require_once() do PHP tem as suas funcionalidades praticamente “idênticas” às funções include() e require(), respectivamente.
       Digo “idênticas” (entre aspas) pois a única diferença entre elas é o fato da funções que possuem o “_once” só permitirem a inclusão do arquivo uma única vez na página e ignorando caso você chame ela mais vezes sem notar.
+
+
+      MAIS INFORMAÇÕES:
+
+      https://pt.stackoverflow.com/questions/15286/quando-usar-require-include-require-once-e-include-once
+      https://www.gigasystems.com.br/artigo/38/diferenca-entre-include-e-require-include_once-e-require_once
