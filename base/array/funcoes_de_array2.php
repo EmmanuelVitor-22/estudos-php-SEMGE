@@ -1,5 +1,6 @@
 <?php 
 $numbers = [5, 2, 4, 1, 3];
+$numbers2 = [5, 8, 4, 1, 3];
 
 $studentGrades = array(
     "John" => 85,
@@ -42,10 +43,16 @@ echo  var_dump((in_array("jose",$studentGrades)));
 $posicao = array_search("2",$numbers);
 echo ($posicao);
 
+echo PHP_EOL;
 #organizar (ordenar) elementos de um array
 sort(($studentGrades));
 print_r($studentGrades);
 
+echo PHP_EOL;
+// mostrar direrença entre array
+// array_diff: Computes the difference of arrays, recebe dois parametros (o)
+$diff = array_diff($numbers, $numbers2);
+print_r($diff);
 
 
 
