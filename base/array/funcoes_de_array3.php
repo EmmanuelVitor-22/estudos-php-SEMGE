@@ -1,4 +1,5 @@
 <?php 
+echo "<h1>FUNÇÕES DE ARRAY: ORDENAÇÃO (ARRAY SIMPLES)</h1>";
 
 $array = [
     "uva",

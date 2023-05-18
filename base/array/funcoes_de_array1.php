@@ -1,4 +1,5 @@
 <?php 
+echo "<h1>FUNÇÕES DE ARRAY: </h1>";
 
 $arr = [
     "uva",
