@@ -1,27 +1,27 @@
 <?php 
 
-$arr = [
+$array = [
     "uva",
     "goiaba",
     "maça"
 ];
 
 
-$arr2 = [
+$array2 = [
     "uva",
     "goiaba",
     "maça", 
     "pera"
 ];
 
-$arr3 = [
+$array3 = [
     "uva",
     "goiaba",
     "pera",
     "maça" 
 ];
 
-$arr4 = [
+$array4 = [
     "uva",
     "goiaba",
     "pera",
@@ -40,32 +40,32 @@ $clientes = [
 
 #ordenar array de forma crescente
 #ela ordena o valor mas altera as chaves
-print_r( $arr);
+print_r( $array);
 echo PHP_EOL ;
-sort($arr);
-print_r( $arr);
+sort($array);
+print_r( $array);
 
 #ordenar array de forma crescente
 #ela ordena o valor e mantém as chaves
-print_r( $arr2);
+print_r( $array2);
 echo PHP_EOL ;
-asort($arr2);
-print_r( $arr2);
+asort($array2);
+print_r( $array2);
 
 
 #ordenar array de forma decrescente
 #ela ordena o valor mas altera as chaves
-print_r( $arr3);
+print_r( $array3);
 echo PHP_EOL ;
-rsort($arr3);
-print_r( $arr3);
+rsort($array3);
+print_r( $array3);
 
 #ordenar array de forma decrescente
 #ela ordena o valor e mantém as chaves
-print_r( $arr4);
+print_r( $array4);
 echo PHP_EOL ;
-arsort($arr4);
-print_r( $arr4);
+arsort($array4);
+print_r( $array4);
 
 
 ?>
