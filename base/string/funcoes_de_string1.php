@@ -34,10 +34,68 @@ echo "$str - $toUpper";
 echo PHP_EOL;
 echo "$str2 - $toUpper2";
 
+// echo PHP_EOL;
+// $palavra = "Ação";
+// echo "colocar todo em caixa alta (resolve problema nos carateres especiais) - mb_strtoupper(";
+// echo PHP_EOL;
+// $toUpperMB2 = mb_strtoupper($palavra);
+// echo PHP_EOL;
+// echo "$palavra - $toUpperMB2";
+
 echo PHP_EOL;
-$palavra = "Ação";
-echo "colocar todo em caixa alta (probema nos carateres especiais - strtoupper(";
+
+echo "colocar todo em caixa baixa (probema nos carateres especiais - strtolower(";
 echo PHP_EOL;
-$toUpperMB2 = mb_strtoupper($palavra);
+$toUpper = strtolower($str);
+$toUpper2 = strtolower($str2);
 echo PHP_EOL;
-echo "$palavra - $toUpperMB2";
+echo "$str - $toUpper";
+echo PHP_EOL;
+echo "$str2 - $toUpper2";
+
+// echo PHP_EOL;
+// $palavra = "Ação";
+// echo "colocar todo em caixa baixa (resolve problema nos carateres especiais) - mb_strtolower(";
+// echo PHP_EOL;
+// $toUpperMB2 = mb_strtolower($palavra);
+// echo PHP_EOL;
+// echo "$palavra - $toUpperMB2";
+
+echo "STR_REPLACE - Substituir string";
+#Replace all occurrences of the search string with the replacement string
+echo PHP_EOL;
+$frase = "teste replace";
+$result =  str_replace("teste","string",$frase);
+echo"Frase antes:  $frase";
+echo PHP_EOL;
+echo"Frase depois:  $result";
+
+
+echo PHP_EOL;
+echo "inverter string";
+#Replace all occurrences of the search string with the replacement string
+echo PHP_EOL;
+$frase = "teste replace";
+echo  strrev($frase);
+
+echo PHP_EOL;
+
+echo "embaralhar string";
+#Replace all occurrences of the search string with the replacement string
+echo PHP_EOL;
+$frase = "teste replace";
+echo "Frase normal:  $frase " . PHP_EOL;
+echo "frase invertida>: " .  str_shuffle($frase);
+
+echo PHP_EOL;
+
+
+echo "SPLIT";
+#Replace all occurrences of the search string with the replacement string
+echo PHP_EOL;
+$frase = "teste replace";
+echo "Frase normal:  $frase " . PHP_EOL;
+print_r(  str_split($frase));
+print_r(  str_split($frase,2));
+
+echo PHP_EOL;
