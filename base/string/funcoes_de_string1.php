@@ -16,8 +16,28 @@ echo PHP_EOL;
 echo "$str2 - $tamPalavraComCaracteresEspeciais";
 echo PHP_EOL;
 
-echo "CONTAR TAMANHO DE STRING - mb_strlen()";
-";
-
+echo "CONTAR TAMANHO DE STRING sem contabilizar os caracteres especiais - mb_strlen()";
+echo PHP_EOL;
 // Para corrigir o problema dos caracteres especiais é possivel usar a função mb_strlen()
-mb_strlen
+
+echo "$str mb_strlen($tamPalavraSimples)";
+echo PHP_EOL;
+echo "$str2Mb mb_strlen($tamPalavraComCaracteresEspeciais)";
+echo PHP_EOL;
+
+echo "colocar todo em caixa alta (probema nos carateres especiais - strtoupper(";
+echo PHP_EOL;
+$toUpper = strtoupper($str);
+$toUpper2 = strtoupper($str2);
+echo PHP_EOL;
+echo "$str - $toUpper";
+echo PHP_EOL;
+echo "$str2 - $toUpper2";
+
+echo PHP_EOL;
+$palavra = "Ação";
+echo "colocar todo em caixa alta (probema nos carateres especiais - strtoupper(";
+echo PHP_EOL;
+$toUpperMB2 = mb_strtoupper($palavra);
+echo PHP_EOL;
+echo "$palavra - $toUpperMB2";
