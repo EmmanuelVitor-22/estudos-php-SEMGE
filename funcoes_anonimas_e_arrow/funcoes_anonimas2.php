@@ -53,15 +53,18 @@
     
 
 echo pegarFuncoes(1)("Lana");
+echo PHP_EOL;
 
 
 
 
 
+echo "Escolhendo o caracter especial";
+$senhaSecreta = function($txt, $specialChar){
+    return str_pad("",strlen($txt), $specialChar);
+};
 
-
-
-
+echo $senhaSecreta("12345", ".");
 
 
 ?>
