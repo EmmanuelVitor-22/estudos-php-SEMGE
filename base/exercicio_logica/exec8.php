@@ -1,4 +1,5 @@
 <?php 
+    require_once "func_heade_base.php";
     $pessoas =[
        [
             "nome" => "João",
@@ -62,12 +63,7 @@
        ]
     ];
 
-    function headerList($titulo, $col1="Nome", $col2=""){
-        
-        echo "\t     $titulo" .PHP_EOL;
-        echo "  $col1 \t\t $col2" .PHP_EOL;
-
-    }
+   
 
     headerList("Lista", "Nome", "Idade");
     foreach ($pessoas as $pessoa) {
@@ -78,9 +74,6 @@
 
     echo PHP_EOL . PHP_EOL;
     headerList("Moradores de  Santos ", "Nome");
-
-    echo "  Moradores de  Santos " .PHP_EOL;
-    echo "       Nome " .PHP_EOL;
     foreach ($pessoas as $pessoa) {
         if($pessoa["cidade"] == "Santos"){
             echo "-----------------";
@@ -101,9 +94,7 @@
         }
     }
     echo PHP_EOL . PHP_EOL;
-
-    echo "  Pessoas do sexo M " .PHP_EOL;
-    echo "       Nome " .PHP_EOL;
+    headerList("Pessoas do Sexo Masculono", "Nome");
     $sexoM = 0;
     foreach ($pessoas as $pessoa) {
         if($pessoa["sexo"] == "Masculino"){
