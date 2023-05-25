@@ -20,8 +20,16 @@
     }
     echo "A média da turma é: $media" . PHP_EOL;
 
-    echo "A maior nota da turma foi: " . max($alunos["nota"]);
+    $notaMaior = 0;
 
+    foreach ($alunos as $key => $aluno) {
+        if ($aluno["nota"] > $notaMaior) {
+            $notaMaior = $aluno["nota"];
+            $aluno["nome"];
+            print($aluno["nome"] . PHP_EOL);
+        }
+    }
+    print(" A maior norta foi: $notaMaior e o aluno foi". PHP_EOL);
     
 
 ?>
