@@ -32,6 +32,11 @@ body{
     border-radius: 8px;
     margin: 0 auto;
 }
+
+.result{
+    gap: 100px;
+    margin-top: 30px;
+}
 .p_result{
     color: #c2c2c2;
     font-weight: 600;
