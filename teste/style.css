@@ -21,7 +21,7 @@ body{
     flex-direction: column;
     align-items: center;
 }
-.form{
+.form, .result{
     background-color: #353B50;
     width: 50%;
     height: 500px;
@@ -30,6 +30,23 @@ body{
     align-items: flex-start;
     padding: 2em;
     border-radius: 8px;
+    margin: 0 auto;
+}
+.p_result{
+    color: #c2c2c2;
+    font-weight: 600;
+    font-size: 22px;
+}
+a{
+    padding: 14px;
+    border: 1px solid;
+    border-radius: 8px;
+    background: #c2c2c2;
+    text-transform: uppercase;
+    color: #514f4f;
+}
+a:link, a:visited{
+    text-decoration: none;
 }
 
 .lb{
