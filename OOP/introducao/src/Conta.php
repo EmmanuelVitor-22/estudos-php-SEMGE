@@ -24,6 +24,8 @@ $segundaConta = $primeiraConta;
 /*
  * $segundaConta = recebe o valor do endereço que "$primeiraConta" armazena. No fim das contas aponta para o mesmo endereço de memoria;
  * */
+
+// Explicação em imagem - https://i.stack.imgur.com/drQLh.jpg ;
 echo "prime";
 echo  $primeiraConta;
 
