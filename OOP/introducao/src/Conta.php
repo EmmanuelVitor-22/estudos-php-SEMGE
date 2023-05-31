@@ -30,6 +30,5 @@ echo "prime";
 echo  $primeiraConta;
 
 PHP_EOL;
-echo "Segu";
-echo $segundaConta;
+
 ?>
