@@ -28,6 +28,5 @@ $segundaConta = $primeiraConta;
 // Explicação em imagem - https://i.stack.imgur.com/drQLh.jpg ;
 
 
-PHP_EOL;
 
 ?>
