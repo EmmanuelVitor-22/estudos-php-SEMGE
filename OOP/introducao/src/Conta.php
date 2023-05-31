@@ -26,8 +26,7 @@ $segundaConta = $primeiraConta;
  * */
 
 // Explicação em imagem - https://i.stack.imgur.com/drQLh.jpg ;
-echo "prime";
-echo  $primeiraConta;
+
 
 PHP_EOL;
 
