@@ -13,11 +13,7 @@ class Conta
     public function sacar($valorDeSaque)
     {
         var_dump($valorDeSaque > $this->saldo, $valorDeSaque, $this->saldo);
-        if ($valorDeSaque > $this->saldo) {
-            var_dump("debug no saldo", $this->saldo);
-            echo "<br>";
-            var_dump("debug no valor de saque", $valorDeSaque);
-            exit();
+        if ($valorDeSaque<0 || $valorDeSaque > $this->saldo) {
             echo "Valor invalido ou saldo insuficiente";
         } else {
             $this->saldo -= $valorDeSaque;
