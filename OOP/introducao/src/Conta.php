@@ -7,38 +7,42 @@ class Conta
     private $saldo = 0;
 
     //metodo construtor
-    public function __construct($cpfTitular, $nome, $saldo)
+    public function __construct($cpfTitular, $nome)
     {
         $this->cpfTitular = $cpfTitular;
         $this->nome = $nome;
-        $this->saldo = $saldo;
+        $this->saldo = 0;
     }
 
     //metodos
     public function sacar($valorDeSaque){
-        if ($valorDeSaque < 0 || $valorDeSaque > $this->saldo ) {
-            echo "Valor invalido ou saldo insuficiente";
-        } else {
-            $this->saldo -= $valorDeSaque;
-            var_dump($this->saldo);
-        }
+        if ($valorDeSaque < 0 || $valorDeSaque > $this->saldo ) 
+            return print( "Valor invalido ou saldo insuficiente. \n");
+      
+            return $this->saldo -= $valorDeSaque;
+            
+        
     }
     public function depositar(float $valorDeDeposito){
-        if($valorDeDeposito<0)
-            echo "Valor de deposito não pode ser negativo";
-       
-            return $this->saldo +=$valorDeDeposito;
+        ($valorDeDeposito<0) ? print( "Valor de deposito não pode ser negativo. \n")
+                             : $this->saldo +=$valorDeDeposito;
         
     }
 
     public function tranferir(Conta $contaDestino, $valorDeTranferencia){
-        if ($valorDeTranferencia>$this->saldo) {
-            echo "Valor indisponivel";
-        }else{
-            $this->sacar($valorDeTranferencia);
-            $contaDestino->depositar($valorDeTranferencia);
-        }
+      ($valorDeTranferencia>$this->saldo) ? print( "Valor indisponivel. \n")
+                                          :
+                                            $this->sacar($valorDeTranferencia);
+                                            $contaDestino->depositar($valorDeTranferencia);
+        
     }
+
+    /*
+        Metodos GET - Devolvem o valor (retornam) de um atributo
+        Metodos Set - definem um valor de um atributo.
+                    - Podem conter uma validação (ou comportamento).  
+    */
+
 
     public function getCpfTitular()
     {
