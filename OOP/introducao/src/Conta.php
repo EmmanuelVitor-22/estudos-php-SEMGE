@@ -39,6 +39,46 @@ class Conta
             $contaDestino->depositar($valorDeTranferencia);
         }
     }
+
+    public function getCpfTitular()
+    {
+        return $this->cpfTitular;
+    }
+ 
+    public function setCpfTitular($cpfTitular)
+    {
+        $this->cpfTitular = $cpfTitular;
+
+        return $this;
+    }
+
+    
+    public function getNome()
+    {
+        return $this->nome;
+    }
+
+     
+    public function setNome($nome)
+    {
+        $this->nome = $nome;
+
+        return $this;
+    }
+
+    /*
+        No caso do saldo, como a unica forma de alterá-lo ou defini-lo
+        será através dos metodos saque, transferencia ou deposito.
+        Metodos de acesso não precisam, obrigatóriamente, serem criados para todos
+        os atributos
+    */ 
+    
+    public function getSaldo()
+    {
+        return $this->saldo;
+    }
+
+     
 }
 
 
