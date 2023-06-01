@@ -1,15 +1,20 @@
 <?php
 class Conta
 {
+    //modificadores de acesso (private, protected, public)
     private $cpfTitular;
     private $nome;
     private $saldo = 0;
+
+    //metodo construtor
     public function __construct($cpfTitular, $nome, $saldo)
     {
         $this->cpfTitular = $cpfTitular;
         $this->nome = $nome;
         $this->saldo = $saldo;
     }
+
+    //metodos
     public function sacar($valorDeSaque){
         if ($valorDeSaque < 0 || $valorDeSaque > $this->saldo ) {
             echo "Valor invalido ou saldo insuficiente";
@@ -35,19 +40,6 @@ class Conta
         }
     }
 }
-
-
-
-
-$conta = new Conta("040428", "Emm", 10000);
-$conta->sacar(33);
-$conta->depositar(30);
-
-var_dump($conta);
-$conta2 = new Conta("8777", "sdsds", 230);
-$conta2->depositar(160);
-var_dump($conta2);
-
 
 
 
