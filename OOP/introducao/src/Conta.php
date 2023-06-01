@@ -18,21 +18,36 @@ class Conta
             var_dump($this->saldo);
         }
     }
-    public function deposita(float $valorDeDeposito):void{
-        if($valorDeDeposito<0){
+    public function depositar(float $valorDeDeposito){
+        if($valorDeDeposito<0)
             echo "Valor de deposito não pode ser negativo";
+       
+            return $this->saldo +=$valorDeDeposito;
+        
+    }
+
+    public function tranferir(Conta $contaDestino, $valorDeTranferencia){
+        if ($valorDeTranferencia>$this->saldo) {
+            echo "Valor indisponivel";
         }else{
-            $this->saldo +=$valorDeDeposito;
+            $this->sacar($valorDeTranferencia);
+            $contaDestino->depositar($valorDeTranferencia);
         }
     }
 }
+
+
+
+
 $conta = new Conta("040428", "Emm", 10000);
 $conta->sacar(33);
-$conta->deposita(30);
+$conta->depositar(30);
+
 var_dump($conta);
 $conta2 = new Conta("8777", "sdsds", 230);
-$conta2->deposita(160);
+$conta2->depositar(160);
 var_dump($conta2);
+
 
 
 
