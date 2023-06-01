@@ -25,6 +25,7 @@ $conta = new Conta("040428", "Emm", 10000);
 $conta->sacar(33);
 var_dump($conta);
 $conta2 = new Conta("8777", "sdsds", 230);
+$conta3 = new Conta("ssdsd", "sdfd", 90);
 /* 
  * $primeiraConta = new Conta("ffdfdf", "Nome ", 1234);
  * * $primeiraConta = armazena o endereço para onde o objeto está armazenado em memoria e não o objeto em si;
