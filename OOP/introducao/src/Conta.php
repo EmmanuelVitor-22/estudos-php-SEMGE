@@ -3,7 +3,7 @@ class Conta
 {
     private $cpfTitular;
     private $nome;
-    private $saldo;
+    private $saldo = 0;
     public function __construct($cpfTitular, $nome, $saldo)
     {
         $this->cpfTitular = $cpfTitular;
@@ -33,6 +33,7 @@ var_dump($conta);
 $conta2 = new Conta("8777", "sdsds", 230);
 $conta2->deposita(160);
 var_dump($conta2);
+
 
 
 /* 
