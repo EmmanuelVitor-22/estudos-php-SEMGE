@@ -10,23 +10,31 @@ class Conta
         $this->nome = $nome;
         $this->saldo = $saldo;
     }
-    public function sacar($valorDeSaque)
-    {
-        var_dump($valorDeSaque > $this->saldo, $valorDeSaque, $this->saldo);
-        if ($valorDeSaque<0 || $valorDeSaque > $this->saldo) {
+    public function sacar($valorDeSaque){
+        if ($valorDeSaque < 0 || $valorDeSaque > $this->saldo ) {
             echo "Valor invalido ou saldo insuficiente";
         } else {
             $this->saldo -= $valorDeSaque;
             var_dump($this->saldo);
         }
     }
+    public function deposita(float $valorDeDeposito):void{
+        if($valorDeDeposito<0){
+            echo "Valor de deposito não pode ser negativo";
+        }else{
+            $this->saldo +=$valorDeDeposito;
+        }
+    }
 }
 $conta = new Conta("040428", "Emm", 10000);
 $conta->sacar(33);
+$conta->deposita(30);
 var_dump($conta);
 $conta2 = new Conta("8777", "sdsds", 230);
-$conta3 = new Conta("ssdsd", "sdfd", 90);
-$conta4 = new Conta("ssdsd", "sdfd", 91);
+$conta2->deposita(160);
+var_dump($conta2);
+
+
 /* 
  * $primeiraConta = new Conta("ffdfdf", "Nome ", 1234);
  * * $primeiraConta = armazena o endereço para onde o objeto está armazenado em memoria e não o objeto em si;
