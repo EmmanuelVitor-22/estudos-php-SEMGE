@@ -10,6 +10,10 @@ $conta->tranferir($conta2,300);
 var_dump($conta);
 var_dump($conta2);
 
+
+$contaTeste = new Conta("Em","a",1234);
+var_dump($contaTeste);
+
 /*
 $conta->sacar(33);
 $conta->depositar(30);

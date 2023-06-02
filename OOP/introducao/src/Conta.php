@@ -6,9 +6,11 @@ class Conta{
     private $saldo = 0;
 
     //metodo construtor
+    //DETALHE: EM PHP SÓ PODE TER APENAS UM CONSTRUTOR
     public function __construct($cpfTitular, $nome){
         $this->cpfTitular = $cpfTitular;
-        $this->validaNome( $nome) ;
+        $this->validaNome($nome);
+        $this->nome=$nome;
         $this->saldo = 0;
     }
 
@@ -37,6 +39,7 @@ class Conta{
     private function validaNome($nome){
         if (strlen($nome)<5) {
             echo "Nome invalido. \n Se nome é menor que 5 letras ponha seu sobrenome.";
+            exit();
         }
         return $nome;
     }
