@@ -13,7 +13,7 @@ var_dump($conta2);
 $chama =  new Conta("04i2042", "sdfofodfndonfodnfodno", 12122);
 var_dump($chama);
 
-
+#unset($contaTeste); #unset, nesse caso, destrói o objeto, ao fazer isso ele chama o metodo destrutor
 
 /*
 $conta->sacar(33);
