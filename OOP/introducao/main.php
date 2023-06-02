@@ -10,9 +10,10 @@ $conta->tranferir($conta2,300);
 var_dump($conta);
 var_dump($conta2);
 
+$chama =  new Conta("04i2042", "sdfofodfndonfodnfodno", 12122);
+var_dump($chama);
 
-$contaTeste = new Conta("Em","a",1234);
-var_dump($contaTeste);
+
 
 /*
 $conta->sacar(33);

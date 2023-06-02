@@ -14,6 +14,10 @@ class Conta{
         $this->saldo = 0;
     }
 
+    public function __destruct(){
+        echo "Objeto destruido;";
+    }
+
     //metodos
     public function sacar($valorDeSaque){
          ($valorDeSaque < 0 || $valorDeSaque > $this->saldo ) 
