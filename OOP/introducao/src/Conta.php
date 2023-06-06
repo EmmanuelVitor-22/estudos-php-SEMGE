@@ -1,28 +1,29 @@
 <?php
 class Conta{
     //modificadores de acesso (private, protected, public)
-    private $cpfTitular;
-    private $nome;
-    private $saldo = 0;
+    private Titular $titular;
+    private  $saldo = 0;
     # Atributo estático, é um atributo da classe(forma) e não do objeto(bolo) em si
     private static $countConta = 0;
 
-    //metodo construtor
-    //DETALHE: EM PHP SÓ PODE TER APENAS UM CONSTRUTOR
-    public function __construct($cpfTitular, $nome){
+    /*metodo construtor
+     DETALHE: EM PHP SÓ PODE TER APENAS UM CONSTRUTOR
+    */
+    public function __construct($titular){
         echo "constroi";
-        $this->cpfTitular = $cpfTitular;
-        $this->validaNome($nome);
-        $this->nome=$nome;
+        $this->$titular = $titular;
         $this->saldo = 0;
     }
-    //tem como função encerrar/destruir algo (nesse caso um obj);
-    //é chamado automaticamente qunado a vida do objeto chega ao fim
+    /*
+        tem como função encerrar/destruir algo (nesse caso um obj);
+        é chamado automaticamente qunado a vida do objeto chega ao fim
+    */
     public function __destruct(){
         echo "Objeto destruido;" . PHP_EOL;
     }
 
     //metodos
+    
     public function sacar($valorDeSaque){
          ($valorDeSaque < 0 || $valorDeSaque > $this->saldo ) 
             ?print( "Valor invalido ou saldo insuficiente. \n")
@@ -41,17 +42,6 @@ class Conta{
         $contaDestino->depositar($valorDeTranferencia); 
     }
 
-    /* Metodos privados: Utilizado quando temos regras que cabem somente a classe
-       e não tem a nescessidade de ser exposta ao "mundo exterior" */
-
-    private function validaNome($nome){
-        if (strlen($nome)<5) {
-            echo "Nome invalido. \n Se nome é menor que 5 letras ponha seu sobrenome.";
-            exit();
-        }
-        return $nome;
-    }
-
     /*
         No caso do saldo, como a unica forma de alterá-lo ou defini-lo
         será através dos metodos saque, transferencia ou deposito.
@@ -62,11 +52,20 @@ class Conta{
         return $this->saldo;
     }
 
-    //metodo statico
+    public function getNomeTitular(): string{
+        return $this->titular->getNome();
+    }
+    public function getCpfTitular(): string{
+        return $this->titular->getCpf();
+    }
+    
+    //metodos estaticos
     public static function getCountConta(){
-        // para acessa um atributo estático se usa ::
-        // o self é equivalente ao "this"
-        // enquanto o this é usado para membros da instancia o self é usado para mebros estáticos
+         /* 
+            para acessa um atributo estático se usa ::
+            o self é equivalente ao "this"
+            enquanto o this é usado para membros da instancia o self é usado para mebros estáticos
+         */   
         return self::$countConta++;
         // o codigo acima equivale a: return Conta::$countConta
     }

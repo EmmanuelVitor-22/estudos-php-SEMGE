@@ -1,11 +1,12 @@
 <?php 
 
 require_once "src/Conta.php";
+require_once "src/Titular.php";
 
-
-$conta= new Conta("040428", "Emmaerte");
-$conta2 = new Conta("8777", "sdsdserere");
-$chama =  new Conta("04i2042", "sdfofodfndonfodnfodno", 12122);
+$t1 = new Titular("071.956.755-91", "Suzan Solza");
+$conta= new Conta(new Titular("078.996.855-96", "Emmanuel"));
+$conta2 = new Conta($t1);
+$chama =  new Conta(new Titular("192.777.185-18", "Pietra Pires"), 12122);
 
 $conta->depositar(1000);
 $conta->tranferir($conta2,300);
@@ -16,10 +17,10 @@ var_dump($chama);
 
 echo PHP_EOL;
 echo "conta1 " . PHP_EOL;
-//var_dump($conta);
-#unset($contaTeste); 
-#unset, nesse caso, destrói o objeto, ao fazer isso ele chama o metodo destrutor
-
+/*var_dump($conta);
+    #unset($contaTeste); 
+     #unset, nesse caso, destrói o objeto, ao fazer isso ele chama o metodo destrutor
+*/
 Conta::getCountConta();
 
 /*
