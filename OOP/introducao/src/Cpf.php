@@ -1,23 +1,23 @@
 <?php 
 
-class Cpf{
+    class Cpf{
 
-    private $cpf;
+        private string $numCpf;
 
-    public function __construct($cpf){
-        $this->cpf = $cpf;
+        public function __construct(string $numCpf){
+            $this->numCpf = $numCpf;
+        }
+
+        public function getNumCpf(){
+            return $this->numCpf;
+        }
+
+        public function setNumCpf($numCpf){
+            $this->numCpf = $numCpf;
+
+            return $this;
+        }
+
     }
-
-    public function getCpf(){
-        return $this->cpf;
-    }
-
-    public function setCpf($cpf){
-        $this->cpf = $cpf;
-
-        return $this;
-    }
-
-}
 
 ?>
