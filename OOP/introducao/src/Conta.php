@@ -55,7 +55,7 @@ class Conta{
     public function getNomeTitular(): string{
         return $this->titular->getNome();
     }
-    public function getCpfTitular(): string{
+    public function getCpfTitular(){
         return $this->titular->getCpf();
     }
     

@@ -9,11 +9,11 @@ $conta2 = new Conta($t1);
 $chama =  new Conta(new Titular("192.777.185-18", "Pietra Pires"), 12122);
 
 $conta->depositar(1000);
-$conta->tranferir($conta2,300);
+$conta->tranferir($conta2, 300  );
 
 var_dump($conta);
 var_dump($conta2);
-var_dump($chama);
+var_dump($chama); 
 
 echo PHP_EOL;
 echo "conta1 " . PHP_EOL;

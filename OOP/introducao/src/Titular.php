@@ -1,7 +1,7 @@
 <?php 
 
     class Titular{
-        private $cpf;
+        private Cpf $cpf;
         private $nome;
 
         function __construct($cpf,$nome){
@@ -29,13 +29,8 @@
                         - Podem conter uma validação (ou comportamento).  
         */
         public function getCpf(){
-            return $this->cpf;
+            return $this->cpf->getCpf();
         }
-
-        public function setCpf($cpf){
-            $this->cpf = $cpf;
-            return $this;
-        }  
 
         public function getNome(){
             return $this->nome;
