@@ -4,18 +4,22 @@ class Conta{
     private $cpfTitular;
     private $nome;
     private $saldo = 0;
+    # Atributo estático, é um atributo da classe(forma) e não do objeto(bolo) em si
+    private static $countConta = 0;
 
     //metodo construtor
     //DETALHE: EM PHP SÓ PODE TER APENAS UM CONSTRUTOR
     public function __construct($cpfTitular, $nome){
+        echo "constroi";
         $this->cpfTitular = $cpfTitular;
         $this->validaNome($nome);
         $this->nome=$nome;
         $this->saldo = 0;
     }
-
+    //tem como função encerrar/destruir algo (nesse caso um obj);
+    //é chamado automaticamente qunado a vida do objeto chega ao fim
     public function __destruct(){
-        echo "Objeto destruido;";
+        echo "Objeto destruido;" . PHP_EOL;
     }
 
     //metodos
@@ -47,27 +51,6 @@ class Conta{
         }
         return $nome;
     }
-    /*
-        Metodos GET - Devolvem o valor (retornam) de um atributo
-        Metodos Set - definem um valor de um atributo.
-                    - Podem conter uma validação (ou comportamento).  
-    */
-    public function getCpfTitular(){
-        return $this->cpfTitular;
-    }
-    public function setCpfTitular($cpfTitular){
-        $this->cpfTitular = $cpfTitular;
-
-        return $this;
-    }
-    public function getNome(){
-        return $this->nome;
-    }
-    public function setNome($nome){
-        $this->nome = $nome;
-
-        return $this;
-    }
 
     /*
         No caso do saldo, como a unica forma de alterá-lo ou defini-lo
@@ -79,6 +62,14 @@ class Conta{
         return $this->saldo;
     }
 
+    //metodo statico
+    public static function getCountConta(){
+        // para acessa um atributo estático se usa ::
+        // o self é equivalente ao "this"
+        // enquanto o this é usado para membros da instancia o self é usado para mebros estáticos
+        return self::$countConta++;
+        // o codigo acima equivale a: return Conta::$countConta
+    }
      
 }
 

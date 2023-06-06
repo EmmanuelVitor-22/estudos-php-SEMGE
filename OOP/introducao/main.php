@@ -2,18 +2,25 @@
 
 require_once "src/Conta.php";
 
-$conta = new Conta("040428", "Emm");
-$conta2 = new Conta("8777", "sdsds");
+
+$conta= new Conta("040428", "Emmaerte");
+$conta2 = new Conta("8777", "sdsdserere");
+$chama =  new Conta("04i2042", "sdfofodfndonfodnfodno", 12122);
 
 $conta->depositar(1000);
 $conta->tranferir($conta2,300);
+
 var_dump($conta);
 var_dump($conta2);
-
-$chama =  new Conta("04i2042", "sdfofodfndonfodnfodno", 12122);
 var_dump($chama);
 
-#unset($contaTeste); #unset, nesse caso, destrói o objeto, ao fazer isso ele chama o metodo destrutor
+echo PHP_EOL;
+echo "conta1 " . PHP_EOL;
+//var_dump($conta);
+#unset($contaTeste); 
+#unset, nesse caso, destrói o objeto, ao fazer isso ele chama o metodo destrutor
+
+Conta::getCountConta();
 
 /*
 $conta->sacar(33);
