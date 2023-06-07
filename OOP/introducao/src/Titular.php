@@ -1,5 +1,5 @@
 <?php 
-   
+   require_once "Cpf.php";
     class Titular{
         private Cpf $cpf;
         private $nome;

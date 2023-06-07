@@ -11,7 +11,7 @@
         */
         public function __construct($titular){
             
-            $this->$titular = $titular;
+            $this->titular = $titular;
             $this->saldo = 0;
         }
         /*
