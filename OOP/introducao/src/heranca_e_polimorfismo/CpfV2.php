@@ -1,6 +1,6 @@
 <?php 
 
-    class Cpf{
+    class CpfV2{
 
         private string $numCpf;
 

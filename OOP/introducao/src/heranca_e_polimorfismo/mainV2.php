@@ -1,14 +1,14 @@
 <?php 
 
-    require_once "src/heranca_e_polimorfismo/ContaV2.php";
-    require_once "src/heranca_e_polimorfismo/TitularV2.php";
-    require_once "src/heranca_e_polimorfismo/CpfV2.php";
+    require_once "ContaV2.php";
+    require_once "TitularV2.php";
+    require_once "CpfV2.php";
     
-    $t1 = new Titular(new Cpf("071.956.755-91"), "Suzan Solza");
-    $titular = new Titular(new Cpf("078.996.855-96"), "Emmanuel");
-    $conta= new Conta($titular);
-    $conta2 = new Conta($t1);
-    $conta3 =  new Conta(new Titular(new Cpf("192.777.185-18"), "Pietra Pires"), 12122);
+    $t1 = new TitularV2(new CpfV2("071.956.755-91"), "Suzan Solza");
+    $titular = new TitularV2(new CpfV2("078.996.855-96"), "Emmanuel");
+    $conta= new ContaV2($titular);
+    $conta2 = new ContaV2($t1);
+    $conta3 =  new ContaV2(new TitularV2(new CpfV2("192.777.185-18"), "Pietra Pires"), 12122);
 
     $conta->depositar(1000);
     $conta->tranferir($conta2, 300  );
@@ -41,7 +41,7 @@
         #unset($contaTeste); 
         #unset, nesse caso, destrói o objeto, ao fazer isso ele chama o metodo destrutor
     */
-    Conta::getCountConta();
+    ContaV2::getCountConta();
 
    
 ?>

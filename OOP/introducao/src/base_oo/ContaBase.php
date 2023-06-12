@@ -1,7 +1,10 @@
 <?php
-    class Conta{
+
+use ContaBase as GlobalContaBase;
+
+    class ContaBase{
         //modificadores de acesso (private, protected, public)
-        private Titular $titular;
+        private TitularBase $titular;
         private  $saldo = 0;
         # Atributo estático, é um atributo da classe(forma) e não do objeto(bolo) em si
         private static $countConta = 0;
@@ -35,7 +38,7 @@
                                 : $this->saldo +=$valorDeDeposito;
         }
 
-        public function tranferir(Conta $contaDestino, $valorDeTranferencia){
+        public function tranferir(ContaBase $contaDestino, $valorDeTranferencia){
         ($valorDeTranferencia>$this->saldo) 
         ? print( "Valor indisponivel. \n")
         : $this->sacar($valorDeTranferencia);

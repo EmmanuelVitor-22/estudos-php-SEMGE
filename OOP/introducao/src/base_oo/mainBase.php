@@ -1,14 +1,14 @@
 <?php 
 
-    require_once "src/BaseOO/ContaBase.php";
-    require_once "src/BaseOO/TitularBase.php";
-    require_once "src/BaseOO/CpfBase.php";
+    require_once "ContaBase.php";
+    require_once "TitularBase.php";
+    require_once "CpfBase.php";
     
     $t1 = new TitularBase(new CpfBase("071.956.755-91"), "Suzan Solza");
     $titular = new TitularBase(new CpfBase("078.996.855-96"), "Emmanuel");
-    $conta= new Conta($titular);
-    $conta2 = new Conta($t1);
-    $conta3 =  new Conta(new TitularBase(new CpfBase("192.777.185-18"), "Pietra Pires"), 12122);
+    $conta= new ContaBase($titular);
+    $conta2 = new ContaBase($t1);
+    $conta3 =  new ContaBase (new TitularBase(new CpfBase("192.777.185-18"), "Pietra Pires"), 12122);
 
     $conta->depositar(1000);
     $conta->tranferir($conta2, 300  );
@@ -41,7 +41,7 @@
         #unset($contaTeste); 
         #unset, nesse caso, destrói o objeto, ao fazer isso ele chama o metodo destrutor
     */
-    Conta::getCountConta();
+    ContaBase::getCountConta();
 
    
 ?>

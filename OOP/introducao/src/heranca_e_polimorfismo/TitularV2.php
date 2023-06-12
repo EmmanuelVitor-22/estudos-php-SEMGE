@@ -1,10 +1,10 @@
 <?php 
-   require_once "Cpf.php";
-    class Titular{
-        private Cpf $cpf;
+   require_once "CpfV2.php";
+    class TitularV2{
+        private CpfV2 $cpf;
         private $nome;
 
-        function __construct(Cpf $cpf,$nome){
+        function __construct(CpfV2 $cpf,$nome){
             $this->cpf = $cpf;
             $this->nome = $nome;  
             $this->validaNome($nome);
