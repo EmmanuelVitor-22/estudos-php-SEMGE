@@ -1,8 +1,8 @@
 <?php 
 
-    require_once "src/Conta.php";
-    require_once "src/Titular.php";
-    require_once "src/Cpf.php";
+    require_once "src/heranca_e_polimorfismo/ContaV2.php";
+    require_once "src/heranca_e_polimorfismo/TitularV2.php";
+    require_once "src/heranca_e_polimorfismo/CpfV2.php";
     
     $t1 = new Titular(new Cpf("071.956.755-91"), "Suzan Solza");
     $titular = new Titular(new Cpf("078.996.855-96"), "Emmanuel");
