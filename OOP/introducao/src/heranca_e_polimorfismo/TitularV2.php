@@ -2,9 +2,10 @@
    require_once "CpfV2.php";
     class TitularV2{
         private CpfV2 $cpf;
-        private $nome;
+        private string $nome;
+        private Endereco $endereco ;
 
-        function __construct(CpfV2 $cpf,$nome){
+        function __construct(CpfV2 $cpf, string $nome, Endereco $endereco){
             $this->cpf = $cpf;
             $this->nome = $nome;  
             $this->validaNome($nome);
@@ -39,6 +40,9 @@
             $this->nome = $nome;
             return $this;
         }
+        public function getEndereco():Endereco{
+            return $this->endereco;      
+          }
     }
 
 ?>

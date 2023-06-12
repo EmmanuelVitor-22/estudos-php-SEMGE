@@ -1,14 +1,19 @@
 <?php 
 
     require_once "ContaV2.php";
+    require_once "Endereco.php";
     require_once "TitularV2.php";
     require_once "CpfV2.php";
     
-    $t1 = new TitularV2(new CpfV2("071.956.755-91"), "Suzan Solza");
-    $titular = new TitularV2(new CpfV2("078.996.855-96"), "Emmanuel");
+    $endereco = new Endereco('Salvador', "Babalho", "Rua NSL", "22A");
+    $endereco2 = new Endereco('Salvador', "Babalho", "Rua NSL", "12");
+
+
+    $t1 = new TitularV2(new CpfV2("071.956.755-91"), "Suzan Solza",$endereco);
+    $titular = new TitularV2(new CpfV2("078.996.855-96"), "Emmanuel",$endereco);
     $conta= new ContaV2($titular);
     $conta2 = new ContaV2($t1);
-    $conta3 =  new ContaV2(new TitularV2(new CpfV2("192.777.185-18"), "Pietra Pires"), 12122);
+    $conta3 =  new ContaV2(new TitularV2(new CpfV2("192.777.185-18"), "Pietra Pires",$endereco2), 12122);
 
     $conta->depositar(1000);
     $conta->tranferir($conta2, 300  );
