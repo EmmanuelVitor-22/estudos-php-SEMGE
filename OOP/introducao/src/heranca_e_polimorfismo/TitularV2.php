@@ -42,7 +42,7 @@
         }
         public function getEndereco():Endereco{
             return $this->endereco;      
-          }
+      }
     }
 
 ?>
