@@ -1,7 +1,7 @@
 <?php 
-   require_once "CpfV2.php";
-    class TitularV2{
-        private Pessoa $pessoa;
+ 
+    class TitularV2 extends Pessoa{
+        private Pessoa $pessoa; //herança por composição 
         private Endereco $endereco ;
 
         function __construct(Pessoa $pessoa, Endereco $endereco){
@@ -17,8 +17,11 @@
         */
      
         public function getEndereco():Endereco{
-            return $this->endereco;      
+            return $this->endereco;       
       }
+      public function getPessoa():Pessoa{
+        return $this->pessoa;       
+  }
     }
 
 ?>

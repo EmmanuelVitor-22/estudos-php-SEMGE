@@ -2,7 +2,7 @@
 
     require_once "resources/resources.php";
 
-
+    #INSTANCIAS
     $maria = new Pessoa (new CpfV2("071.956.755-91"), "Maria Solza");
     $joao = new Pessoa (new CpfV2("078.996.855-96"), "Joao Nunes");
     $jose = new Pessoa (new CpfV2("192.777.185-18"), "José Pires");
@@ -17,13 +17,14 @@
 
     $contaMaria= new ContaV2($titularMaria);
     $contaJoao = new ContaV2($titularJoao);
-
     $contaJose =  new ContaV2($titularJose);
 
+    #MANIPULACOES EM CONTAS
     $contaJose->depositar(30000);
-    //$contaJose->tranferir($contaMaria, 10.000);
-    //$contaJose->tranferir($contaJoao, 10.000);
+    $contaJose->tranferir($contaMaria, 10000);
+    $contaJose->tranferir($contaJoao, 10000);
 
+    # CONTAS
     echo "Conta de: Maria";
     echo PHP_EOL;
     var_dump($contaMaria);
@@ -37,34 +38,28 @@
     var_dump($contaJose); 
     echo PHP_EOL;
 
-    echo $contaJose->getSaldo();
-    
+    # SALDOS
+    echo "Saldo de: Maria";
     echo PHP_EOL;
-    
-    
-    // $conta->sacar(33);
-    // $conta->depositar(30);
-    // echo PHP_EOL;
+    echo $contaMaria->getSaldo();
+    echo PHP_EOL;
+    echo "Saldo de: Joao";
+    echo PHP_EOL;
+    echo $contaJoao->getSaldo();
+    echo PHP_EOL;
+    echo "Saldo de: José";
+    echo PHP_EOL;
+    echo $contaJose->getSaldo();
+    echo PHP_EOL;
+   
 
-    // $conta2->depositar(160);
-    // var_dump($conta2);
-    // echo PHP_EOL;
-    // $conta->tranferir($conta2, 50);
-    // var_dump($conta);
-
-    // echo PHP_EOL;
-    // echo "Conta 3";
-    // var_dump($conta3);
-    // $conta3->depositar(-300);
-    // var_dump($conta3);
-    
-
-   // echo PHP_EOL;
-    //echo "conta1 " . PHP_EOL;
     /*var_dump($conta);
-        #unset($contaTeste); 
+        #unset($conta); 
         #unset, nesse caso, destrói o objeto, ao fazer isso ele chama o metodo destrutor
     */
+
+    echo PHP_EOL;
+    #metodo estático para saber quantas instancias foram feitas a partir da classe CONTAV2
     ContaV2::getCountConta();
 
    
