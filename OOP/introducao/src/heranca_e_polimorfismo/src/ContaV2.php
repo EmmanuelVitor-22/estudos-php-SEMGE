@@ -2,7 +2,7 @@
     class ContaV2{
         //modificadores de acesso (private, protected, public)
         private TitularV2 $titular;
-        private  $saldo = 0;
+        private  float $saldo = 0;
         # Atributo estático, é um atributo da classe(forma) e não do objeto(bolo) em si
         private static $countConta = 0;
 
@@ -49,14 +49,12 @@
             os atributos
         */ 
         public function getSaldo(){
-            return $this->saldo;
+            return $this->formataSaldo($this->saldo);
         }
 
-        public function getNomeTitular(): string{
-            return $this->titular->getNome();
-        }
-        public function getCpfTitular(){
-            return $this->titular->getCpf();
+        private function formataSaldo($saldo){
+            $formato = numfmt_create('pt_BR', NumberFormatter::CURRENCY);
+             return numfmt_format_currency($formato, $saldo,'BRL');
         }
         
         //metodos estaticos
