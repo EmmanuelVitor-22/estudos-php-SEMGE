@@ -3,7 +3,7 @@
     use NumberFormatter;
     use TitularV2;
 
-    class ContaV2{
+    abstract class ContaV2{
         //modificadores de acesso (private, protected, public)
         private TitularV2 $titular;
         private  float $saldo = 0;
@@ -29,10 +29,14 @@
         //metodos
         
         public function sacar($valorDeSaque){
+            $tarifaSaque = $valorDeSaque*$this->porcentagemDaTarifa(); 
+            $valorDeSaque += $tarifaSaque;
             ($valorDeSaque < 0 || $valorDeSaque > $this->saldo ) 
                 ?print( "Valor invalido ou saldo insuficiente. \n")
                 :$this->saldo -= $valorDeSaque;
         }
+
+        abstract public function porcentagemDaTarifa():float;
 
         public function depositar(float $valorDeDeposito){
             ($valorDeDeposito<0) ? print( "Valor de deposito não pode ser negativo. \n")
