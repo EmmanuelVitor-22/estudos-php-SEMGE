@@ -1,9 +1,9 @@
 <?php 
 
-    require_once "src/ContaV2.php";
-    require_once "src/Pessoa.php";
-    require_once "src/Endereco.php";
-    require_once "src/TitularV2.php";
-    require_once "src/CpfV2.php";
+    require_once "Modelo/Conta/ContaV2.php";
+    require_once "Modelo/Pessoa.php";
+    require_once "Modelo/Endereco.php";
+    require_once "Modelo/Conta/TitularV2.php";
+    require_once "Modelo/CpfV2.php";
 
 ?>
