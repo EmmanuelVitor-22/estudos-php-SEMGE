@@ -1,5 +1,5 @@
 <?php 
-
+    namespace Modelo;
     class CpfV2{
 
         private string $numCpf;

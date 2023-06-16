@@ -1,4 +1,8 @@
 <?php
+    namespace Modelo\Conta; 
+    use NumberFormatter;
+    use TitularV2;
+
     class ContaV2{
         //modificadores de acesso (private, protected, public)
         private TitularV2 $titular;
@@ -7,7 +11,7 @@
         private static $countConta = 0;
 
         /*metodo construtor
-        DETALHE: EM PHP SÓ PODE TER APENAS UM CONSTRUTOR
+        DETALHE: EM PHP SÓ PODE TER APENAS UM CONSTRUTOR 
         */
         public function __construct($titular){
             

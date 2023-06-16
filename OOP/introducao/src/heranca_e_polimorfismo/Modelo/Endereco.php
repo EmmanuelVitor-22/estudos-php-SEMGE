@@ -1,5 +1,5 @@
 <?php 
-
+        namespace Modelo;
     class Endereco{
         private $cidade;
         private $bairro;

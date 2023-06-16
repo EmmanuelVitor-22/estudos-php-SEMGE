@@ -1,5 +1,8 @@
 <?php 
- 
+    namespace Modelo\Conta;
+    use Modelo\Endereco;
+    use Modelo\Pessoa;
+
     class TitularV2 extends Pessoa{
         private Pessoa $pessoa; //herança por composição 
         private Endereco $endereco ;
