@@ -1,4 +1,5 @@
-<?php 
+<?php
+
     namespace Estudo\OOP\Modelo;
     class CpfV2{
 

@@ -1,16 +1,12 @@
 <?php 
 
-    require_once "resources/resources.php";
-spl_autoload_register(function (string $nomeCompletoDaClasse){
-    $src = str_replace('Estudo\\OO',"src", $nomeCompletoDaClasse);
-    $src = str_replace('\\', DIRECTORY_SEPARATOR,$src);
-    $src .= '.php';
-    echo $src;
 
-    exit();
-});
+    namespace Estudo\OOP\Modelo;
+    use Estudo\OOP\Modelo\{CpfV2,  Endereco, Pessoa};
+    use Estudo\OOP\Modelo\Conta\{ContaV2,TitularV2,ContaPoupanca, ContaCorrente};
+
     #INSTANCIAS
-    $maria = new Pessoa (new CpfV2("071.956.755-91"), "Maria Solza");
+    $maria = new Pessoa( new CpfV2("071.956.755-91"), "Maria Solza");
     $joao = new Pessoa (new CpfV2("078.996.855-96"), "Joao Nunes");
     $jose = new Pessoa (new CpfV2("192.777.185-18"), "José Pires");
 
@@ -22,15 +18,20 @@ spl_autoload_register(function (string $nomeCompletoDaClasse){
     $titularJose = new TitularV2($jose, $endereco2);
 
 
-    $contaMaria= new ContaV2($titularMaria);
-    $contaJoao = new ContaV2($titularJoao);
-    $contaJose =  new ContaV2($titularJose);
+    $contaMaria= new ContaCorrente($titularMaria);
+    $contaJoao = new ContaPoupanca($titularJoao);
+    $contaJose =  new ContaCorrente($titularJose);
 
     #MANIPULACOES EM CONTAS
     $contaJose->depositar(30000);
     $contaJose->tranferir($contaMaria, 10000);
     $contaJose->tranferir($contaJoao, 10000);
     $contaJoao->depositar(100);
+
+    echo "Conta de: saldo";
+    echo PHP_EOL;
+    echo $contaMaria->getSaldo();
+    echo PHP_EOL;
 
     # CONTAS
     echo "Conta de: Maria";
@@ -43,7 +44,7 @@ spl_autoload_register(function (string $nomeCompletoDaClasse){
     echo PHP_EOL;
     echo "Conta de: José";
     echo PHP_EOL;
-    var_dump($contaJose); 
+    var_dump($contaJose);
     echo PHP_EOL;
 
     # SALDOS

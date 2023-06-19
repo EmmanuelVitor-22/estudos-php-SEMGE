@@ -1,7 +1,7 @@
 <?php 
     namespace Estudo\OOP\Modelo\Conta;
-    use Modelo\Endereco;
-    use Modelo\Pessoa;
+    use Estudo\OOP\Modelo\Endereco;
+    use Estudo\OOP\Modelo\Pessoa;
 
     class TitularV2 extends Pessoa{
         private Pessoa $pessoa; //herança por composição 

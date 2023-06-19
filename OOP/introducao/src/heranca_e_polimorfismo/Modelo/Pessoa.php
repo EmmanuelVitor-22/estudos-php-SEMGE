@@ -1,9 +1,8 @@
-<?php 
+<?php
+
     namespace Estudo\OOP\Modelo;
-    use Modelo\CpfV2;
 
     class Pessoa{
-
         private CpfV2 $cpf;
         private string $nome;
 

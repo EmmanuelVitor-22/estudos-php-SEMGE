@@ -5,7 +5,7 @@
     
     namespace Estudo\OOP\Modelo\Conta;
     use NumberFormatter;
-    use Modelo\Conta\TitularV2;
+    use Estudo\OOP\Modelo\Conta\TitularV2;
 
     abstract class ContaV2{
         //modificadores de acesso (private, protected, public)
@@ -81,8 +81,6 @@
         }
         
     }
-
-
 
 /* 
  * $primeiraConta = new Conta("ffdfdf", "Nome ", 1234);
