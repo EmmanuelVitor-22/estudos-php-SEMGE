@@ -23,6 +23,7 @@
     $contaJose->depositar(30000);
     $contaJose->tranferir($contaMaria, 10000);
     $contaJose->tranferir($contaJoao, 10000);
+    $contaJoao->depositar(100);
 
     # CONTAS
     echo "Conta de: Maria";
