@@ -1,5 +1,5 @@
 <?php 
-    namespace Modelo;
+    namespace Estudo\OOP\Modelo;
     use Modelo\CpfV2;
 
     class Pessoa{

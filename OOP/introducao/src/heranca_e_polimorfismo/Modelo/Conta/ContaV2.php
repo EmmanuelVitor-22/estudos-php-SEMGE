@@ -3,7 +3,7 @@
 
 
     
-    namespace Modelo\Conta; 
+    namespace Estudo\OOP\Modelo\Conta;
     use NumberFormatter;
     use Modelo\Conta\TitularV2;
 

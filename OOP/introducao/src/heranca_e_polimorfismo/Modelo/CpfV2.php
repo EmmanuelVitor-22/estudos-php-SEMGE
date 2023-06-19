@@ -1,5 +1,5 @@
 <?php 
-    namespace Modelo;
+    namespace Estudo\OOP\Modelo;
     class CpfV2{
 
         private string $numCpf;

@@ -1,5 +1,5 @@
 <?php 
-    namespace Modelo\Conta; 
+    namespace Estudo\OOP\Modelo\Conta;
     use Modelo\Endereco;
     use Modelo\Pessoa;
 

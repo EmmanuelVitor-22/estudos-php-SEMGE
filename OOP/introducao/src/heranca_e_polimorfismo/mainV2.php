@@ -1,7 +1,14 @@
 <?php 
 
     require_once "resources/resources.php";
+spl_autoload_register(function (string $nomeCompletoDaClasse){
+    $src = str_replace('Estudo\\OO',"src", $nomeCompletoDaClasse);
+    $src = str_replace('\\', DIRECTORY_SEPARATOR,$src);
+    $src .= '.php';
+    echo $src;
 
+    exit();
+});
     #INSTANCIAS
     $maria = new Pessoa (new CpfV2("071.956.755-91"), "Maria Solza");
     $joao = new Pessoa (new CpfV2("078.996.855-96"), "Joao Nunes");
