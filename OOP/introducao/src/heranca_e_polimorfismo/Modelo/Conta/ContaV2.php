@@ -1,7 +1,11 @@
 <?php
+
+
+
+    
     namespace Modelo\Conta; 
     use NumberFormatter;
-    use TitularV2;
+    use Modelo\Conta\TitularV2;
 
     abstract class ContaV2{
         //modificadores de acesso (private, protected, public)

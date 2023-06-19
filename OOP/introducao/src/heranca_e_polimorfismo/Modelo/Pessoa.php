@@ -1,6 +1,6 @@
 <?php 
     namespace Modelo;
-    use CpfV2;
+    use Modelo\CpfV2;
 
     class Pessoa{
 

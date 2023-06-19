@@ -2,10 +2,11 @@
     namespace Modelo\Conta; 
 
     class ContaCorrente extends ContaV2{
-        
-         abstract  function porcentagemDaTarifa(){
-          
-         }
+
+        public function porcentagemDaTarifa(): float
+        {
+            return 0;// TODO: Implement porcentagemDaTarifa() method.
+        }
     }
 
 ?>
