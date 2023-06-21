@@ -1,6 +1,7 @@
 <?php
+namespace Bank\Model;
 
-    class Person{
+class Person{
         private  CPF $cpf;
         private string  $name;
 
