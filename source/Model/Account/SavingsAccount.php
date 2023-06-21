@@ -1,5 +1,5 @@
 <?php
-namespace Bank\Model\Account;
+namespace Model\Account;
 
 class SavingsAccount extends Account { #SavingsAccount = Conta Poupança
 

@@ -1,5 +1,5 @@
 <?php
-namespace Bank\Model;
+namespace Model;
 
 class Employee  extends Person{ #Employee = Funcionario
     private string $position; // cargo

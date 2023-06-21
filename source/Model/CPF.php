@@ -1,5 +1,5 @@
 <?php
-namespace Bank\Model;
+namespace Model;
     class CPF{
         private string  $numberCpf;
 

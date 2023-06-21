@@ -1,5 +1,5 @@
 <?php
-namespace Bank\Model\Account;
+namespace Model\Account;
 
 class CheckingAccount extends Account { #CheckingAccount = conta corrente
 

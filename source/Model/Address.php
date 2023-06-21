@@ -1,5 +1,5 @@
 <?php
-namespace Bank\Model;
+namespace Model;
     class Address{
         private $city;
         private $neighbourhood; #bairro

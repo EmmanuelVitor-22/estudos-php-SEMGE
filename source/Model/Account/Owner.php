@@ -1,10 +1,10 @@
 <?php
-namespace Model;
-namespace Bank\Model\Account;
+
+namespace Model\Account;
 
 
-use Bank\Model\Address;
-use Bank\Model\Person;
+use Model\Address;
+use Model\Person;
 
 class Owner extends Person { #owner = proprietario
     private Person $person; // pessoa

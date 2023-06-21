@@ -1,6 +1,7 @@
 <?php
 
-namespace Bank\Model\Account;
+namespace Model\Account;
+use NumberFormatter;
 
 
 abstract class Account {
