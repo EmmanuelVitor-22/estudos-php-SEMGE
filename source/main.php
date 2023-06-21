@@ -4,9 +4,8 @@
 
     namespace  Bank\Model;
     require_once "resource.php";
-    use Model\Account\{Account, CheckingAccount, Owner, SavingsAccount};
+    use Model\Account\{ CheckingAccount, Owner, SavingsAccount};
     use Model\{Address, CPF, Person};
-
 
     #INSTANCIAS
     $maria = new Person (new CPF("071.956.755-91"), "Maria Solza");
@@ -30,43 +29,49 @@
     $contaJose->transfer($contaMaria, 10000);
     $contaJose->transfer($contaJoao, 10000);
     $contaJoao->deposit(100);
+    var_dump($contaJose->getBalance());
+    //echo("Balance before: ". $contaJose->getBalance());
+    //withdraw
+    echo PHP_EOL;
+    $contaJose->withdraw(500);
+    echo("Balance after withdraw: ". $contaJose->getBalance());
 
-    echo "Conta de: saldo";
-    echo PHP_EOL;
-    echo $contaMaria->getBalance();
-    echo PHP_EOL;
-
-    # CONTAS
-    echo "Conta de: Maria";
-    echo PHP_EOL;
-
-    echo PHP_EOL;
-    echo "Conta de: José";
-    echo PHP_EOL;
-    var_dump($contaJose);
-    var_dump($contaJose);
-    echo PHP_EOL;
-
-    # SALDOS
-    echo "Saldo de: Maria";
-    echo PHP_EOL;
-    echo $contaMaria->getBalance();
-    echo PHP_EOL;
-    echo "Saldo de: Joao";
-    echo PHP_EOL;
-    echo $contaJoao->getBalance();
-    echo PHP_EOL;
-    echo "Saldo de: José";
-    echo PHP_EOL;
-    echo $contaJose->getBalance();
-    echo PHP_EOL;
-
-    /*var_dump($conta);
-        #unset($conta);
-        #unset, nesse caso, destrói o objeto, ao fazer isso ele chama o metodo destrutor
-    */
-    echo PHP_EOL;
-    #metodo estático para saber quantas instancias foram feitas a partir da classe CONTAV2
-    Account::getCountAccount();
+//    echo "Conta de: saldo";
+//    echo PHP_EOL;
+//    echo $contaMaria->getBalance();
+//    echo PHP_EOL;
+//
+//    # CONTAS
+//    echo "Conta de: Maria";
+//    echo PHP_EOL;
+//
+//    echo PHP_EOL;
+//    echo "Conta de: José";
+//    echo PHP_EOL;
+//    var_dump($contaJose);
+//    var_dump($contaJose);
+//    echo PHP_EOL;
+//
+//    # SALDOS
+//    echo "Saldo de: Maria";
+//    echo PHP_EOL;
+//    echo $contaMaria->getBalance();
+//    echo PHP_EOL;
+//    echo "Saldo de: Joao";
+//    echo PHP_EOL;
+//    echo $contaJoao->getBalance();
+//    echo PHP_EOL;
+//    echo "Saldo de: José";
+//    echo PHP_EOL;
+//    echo $contaJose->getBalance();
+//    echo PHP_EOL;
+//
+//    /*var_dump($conta);
+//        #unset($conta);
+//        #unset, nesse caso, destrói o objeto, ao fazer isso ele chama o metodo destrutor
+//    */
+//    echo PHP_EOL;
+//    #metodo estático para saber quantas instancias foram feitas a partir da classe CONTAV2
+//    Account::getCountAccount();
 
 

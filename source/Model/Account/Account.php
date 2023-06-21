@@ -7,7 +7,7 @@ use NumberFormatter;
 abstract class Account {
     // Access modifiers (private, protected, public)
     private Owner $owner; // titular
-    private float $balance = 0; // saldo
+    protected float $balance = 0; // saldo
     // Static attribute, it belongs to the class (form) and not to the object (cake) itself
     private static $countAccount = 0; // contadorConta
 
@@ -23,9 +23,9 @@ abstract class Account {
      * It functions to close/destroy something (in this case, an object);
      * It is automatically called when the object's life comes to an end
      */
-    public function __destruct() {
-        echo "Objeto destruído;" . PHP_EOL;
-    }
+//    public function __destruct() {
+//        echo "Objeto destruído;" . PHP_EOL;
+//    }
 
     // Methods
 
@@ -45,13 +45,7 @@ abstract class Account {
             : $this->balance += $depositAmount;
     }
 
-    public function transfer(Account $destinationAccount, $transferAmount) { #transferir(metodo)
-        ($transferAmount > $this->balance)
-        # $transferAmount = valor de transferencia
-            ? print("Valor indisponível.\n")
-            : $this->withdraw($transferAmount);
-        $destinationAccount->deposit($transferAmount);
-    }
+
 
     /*
      * In the case of the balance, since the only way to alter or define it
@@ -59,7 +53,7 @@ abstract class Account {
      * Access methods do not necessarily need to be created for all attributes.
      */
     public function getBalance() {
-        return $this->formatBalance($this->balance);
+       return  $this->formatBalance($this->balance);
     }
 
     private function formatBalance($balance) {
