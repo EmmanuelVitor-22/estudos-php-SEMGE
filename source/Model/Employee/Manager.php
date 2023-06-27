@@ -1,12 +1,12 @@
 <?php
 
-namespace Model;
+namespace Model\Account\Employee;
 
 class Manager extends Employee
 {
 
     public function calculateBonus()
     {
-       return $this->getSalary()*2;
+       return $this->getSalary();
     }
 }

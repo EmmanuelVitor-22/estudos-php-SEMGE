@@ -1,5 +1,6 @@
 <?php
-namespace Model;
+namespace Model\Account\Employee;
+
 class Developer extends Employee
 {
     public function calculateBonus()

@@ -1,5 +1,8 @@
 <?php
-namespace Model;
+namespace Model\Account\Employee;
+
+use Model\CPF;
+use Model\Person;
 
 abstract class Employee  extends Person{ #Employee = Funcionario
     private string $position; // cargo
