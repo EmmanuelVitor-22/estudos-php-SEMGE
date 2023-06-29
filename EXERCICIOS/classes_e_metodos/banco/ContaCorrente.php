@@ -3,7 +3,7 @@
 namespace banco;
 use NumberFormatter;
 
-class AbstractConta{
+class ContaCorrente{
 private $numeroConta;
 private $saldo;
 private $especial;
@@ -11,7 +11,7 @@ private $limiteUsado;
 private $limite;
 
 
-    public function __construct($numeroConta, $especial, $limite)
+    public function __construct($numeroConta, $especial, $limite=0)
     {
         $this->numeroConta = $numeroConta;
         $this->saldo = 0;
@@ -33,9 +33,23 @@ private $limite;
             return "Voce não tem saldo para isso, ou seu valor digitado foi negativo";
         }
         return $this->saldo -= $valorDeSaque;
-
     }
 
+    public function teste($valorDeSaque){
+        if ($this->especial && ($valorDeSaque>0 && $valorDeSaque<= $this->saldo)){
+            return  $this->saldo -= $valorDeSaque;
+        }
+
+        if ($this->especial && ($valorDeSaque>0 && $valorDeSaque > $this->saldo)){
+            $this->limiteUsado = $this->saldo - $valorDeSaque;
+            if ($this->limite>0 && $this->limite>=$valorDeSaque){
+
+                $this->limiteUsado +=  $valorDeSaque;
+
+            }
+        }
+
+    }
     public function sacarEspecial($valorDeSaque)
     {
         if($this->especial && $valorDeSaque<=$this->limite){
@@ -98,17 +112,4 @@ private $limite;
         $this->limite = $limite;
     }
 }
-
-$conta = new AbstractConta(7779,true, 10);
-//$depositar = $conta->depositar(100);
-$sEspec = $conta->saque(20);
-var_dump("espec",$sEspec);
-//$saque = $conta->saque(10);
-//print_r($depositar);
-//echo PHP_EOL;
-//print_r($saque);
-//echo PHP_EOL;
-//echo $conta;
-//echo PHP_EOL;
-//print_r($conta->getEspecial());
 
