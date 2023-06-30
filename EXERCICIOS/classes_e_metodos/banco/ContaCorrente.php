@@ -2,6 +2,7 @@
 
 namespace banco;
 use NumberFormatter;
+use function base_oo\estudo\depositar;
 
 class ContaCorrente{
 private $numeroConta;
@@ -35,31 +36,30 @@ private $limite;
         return $this->saldo -= $valorDeSaque;
     }
 
-    public function teste($valorDeSaque){
+    public function sacarEspecial($valorDeSaque){
         if ($this->especial && ($valorDeSaque>0 && $valorDeSaque<= $this->saldo)){
             return  $this->saldo -= $valorDeSaque;
         }
-
         if ($this->especial && ($valorDeSaque>0 && $valorDeSaque > $this->saldo)){
-            $this->limiteUsado = $this->saldo - $valorDeSaque;
             if ($this->limite>0 && $this->limite>=$valorDeSaque){
-
-                $this->limiteUsado +=  $valorDeSaque;
-
+                $this->limiteUsado += ($this->saldo - $valorDeSaque);
+                $this->limite -= $this->limiteUsado;
+                return $this->saldo -=$this->limite;
             }
+            return "VD excede o valor limite, ou valor digitado é irregular";
         }
-
+        return "Valor excede o valor limite, ou valor digitado é irregular";
     }
-    public function sacarEspecial($valorDeSaque)
-    {
-        if($this->especial && $valorDeSaque<=$this->limite){
-            $this->limiteUsado +=  $valorDeSaque;
-            $this->limite -= $this->limiteUsado;
-            return $this->saldo -= $this->limite;
-        }
-        return "o limite escede o seu cheque especial";
-
-    }
+//    public function sacarEspecial($valorDeSaque)
+//    {
+//        if($this->especial && $valorDeSaque<=$this->limite){
+//            $this->limiteUsado +=  $valorDeSaque;
+//            $this->limite -= $this->limiteUsado;
+//            return $this->saldo -= $this->limite;
+//        }
+//        return "o limite escede o seu cheque especial";
+//
+//    }
 //    public function isContaEspecial(){
 //        if(!$this->especial){
 //            return  "Usuario não possui uma conta com limite especial"
@@ -76,12 +76,10 @@ private $limite;
     public function __toString(){
         return "{$this->numeroConta}, {$this->saldo}, {$this->especial}, {$this->limite}";
     }
-
     private function formatarValor($valor) {
         $formato = numfmt_create('pt_BR', NumberFormatter::CURRENCY);
         return numfmt_format_currency($formato, $valor, 'BRL');
     }
-
     public function getNumeroConta()
     {
         return $this->numeroConta;
@@ -90,7 +88,6 @@ private $limite;
     {
         $this->numeroConta = $numeroConta;
     }
-
     public function getSaldo()
     {
         return $this->formatarValor($this->saldo);
@@ -111,5 +108,13 @@ private $limite;
     {
         $this->limite = $limite;
     }
-}
+    public function getLimiteUsado(): int
+    {
+        return $this->limiteUsado;
+    }
+    public function setLimiteUsado(int $limiteUsado): void
+    {
+        $this->limiteUsado = $limiteUsado;
+    }
 
+}
