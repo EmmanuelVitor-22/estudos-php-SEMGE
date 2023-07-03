@@ -7,6 +7,6 @@ class Manager extends Employee
 
     public function calculateBonus()
     {
-       return $this->getSalary()*2;
+       return $this->getSalary();
     }
 }
