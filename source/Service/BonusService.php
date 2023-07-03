@@ -2,7 +2,7 @@
 
 namespace Service;
 
-use Model\Employee;
+use Employee\Employee;
 
 class BonusService{
     private $totalBonus = 0;

@@ -1,5 +1,8 @@
 <?php
-namespace Model;
+namespace Employee;
+
+use Model\CPF;
+use Model\Person;
 
 abstract class Employee  extends Person{ #Employee = Funcionario
     private string $position; // cargo
@@ -13,6 +16,19 @@ abstract class Employee  extends Person{ #Employee = Funcionario
     }
 
     abstract public function calculateBonus();
+    abstract public function levelUp();
+
+
+     public function increaseSalary($icreaseValue){ #aumentar salario
+            if($icreaseValue<=0){
+                echo "valor de aumento invalido";
+                return;
+            }
+            $this->salary += $icreaseValue;
+    }
+
+
+
 
     public function getSalary(): float{
         return $this->salary;
