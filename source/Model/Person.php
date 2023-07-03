@@ -1,7 +1,7 @@
 <?php
 namespace Model;
 
-class Person{
+abstract class Person{
         private  CPF $cpf;
         private string  $name;
 

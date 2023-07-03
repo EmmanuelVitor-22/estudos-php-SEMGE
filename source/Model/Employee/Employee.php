@@ -10,7 +10,7 @@ abstract class Employee extends Person
 //    private string $position; // cargo
     private float $salary;
 
-    public function __construct(CPF $cpf, $name, $position, $salary)
+    public function __construct(CPF $cpf, $name, $salary)
     {
         // inheritance (code reuse through inheritance)
         parent::__construct($cpf, $name);
@@ -19,7 +19,7 @@ abstract class Employee extends Person
     }
 
     abstract public function calculateBonus();
-    abstract public function levelUp();
+
 
 
     public function increaseSalary($icreaseValue)

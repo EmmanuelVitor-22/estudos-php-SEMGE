@@ -2,12 +2,12 @@
 
 namespace Model\Employee;
 
-class Manager extends Employee
+class VideoMaker extends \Model\Employee\Employee
 {
 
     public function calculateBonus()
     {
-       return $this->getSalary();
+
     }
 
 
