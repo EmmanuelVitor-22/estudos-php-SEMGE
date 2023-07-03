@@ -1,8 +1,8 @@
 <?php
 namespace Employee;
-namespace Model\Account\Employee;
+namespace Model\Employee;
 
-class Developer extends Employee
+class  Developer extends Employee
 {
     public function calculateBonus()
     {

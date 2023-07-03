@@ -2,7 +2,7 @@
 
 namespace Service;
 
-use Employee\Employee;
+use Model\Employee\Employee;
 
 
 class BonusService

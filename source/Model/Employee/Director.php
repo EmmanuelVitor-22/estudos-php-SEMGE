@@ -9,4 +9,9 @@ class Director extends Employee
     {
         return $this->getSalary()*2;
     }
+
+    public function levelUp()
+    {
+        return null;
+    }
 }
