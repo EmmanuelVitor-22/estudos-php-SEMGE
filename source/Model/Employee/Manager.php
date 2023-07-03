@@ -2,7 +2,10 @@
 
 namespace Model\Employee;
 
-class Manager extends Employee
+use Model\Authenticable;
+
+
+class Manager extends Employee implements Authenticable
 {
 
     public function calculateBonus()
@@ -11,4 +14,8 @@ class Manager extends Employee
     }
 
 
+    public function canAuth($password)
+    {
+        return $password ==="4321";
+    }
 }

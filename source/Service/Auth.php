@@ -2,21 +2,16 @@
 
 namespace Service;
 
-use Bank\Authenticable;
-use Model\Employee\Director;
+use Model\Authenticable;
 
 class Auth{
 
 
-    public function login(Authenticable $authenticable, string $senha){
-
-
-                if ($senha == "1234"){
-                    echo "Bem vindo";
-                }
-                echo "Senha invalida";
-
-
+    public function login(Authenticable $authenticable, string $password){
+        if ($authenticable->canAuth($password)){
+            return "Bem vindo(a)";
+        }
+        return  "Senha ou usuario incorreto";
     }
     
 }

@@ -3,10 +3,11 @@
 namespace Model\Account;
 
 
+use Model\Authenticable;
 use Model\Address;
 use Model\Person;
 
-class Owner extends Person { #owner = proprietario
+class Owner extends Person implements Authenticable { #owner = proprietario
     private Person $person; // pessoa
     private Address $address; // endereco
 
@@ -21,5 +22,9 @@ class Owner extends Person { #owner = proprietario
 
     public function getPerson(): Person{
         return $this->person;
+    }
+    public function canAuth($password)
+    {
+       return $password === "user";
     }
 }

@@ -9,5 +9,5 @@ use Model\CPF;
 $authenticator = new Auth();
 $director = new Director(new CPF("123.456.789-10"),"Jose Santos", 1200);
 
- $authenticator->login($director, "3333");
+ echo $authenticator->login($director, "1234");
 
