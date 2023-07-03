@@ -2,36 +2,19 @@
 
 namespace Model\Employee;
 
-class Director extends Employee
+use Bank\Authenticable;
+
+class Director extends Employee implements Authenticable
 {
         private $senha;
-
-    /**
-     * @param $senha
-     */
-    public function __construct($senha)
-    {
-        $this->senha = $senha;
-    }
 
     public function calculateBonus()
     {
         return $this->getSalary()*2;
     }
 
-    public function canAuth(){ //pode autenticar
-        if ($this->senha === "1234"){
-            return "Bem vindo";
-        }
-        return "Senha invalida";
+
+    public function canAuth($senha){
+       return $senha === "1234";
     }
-
-
-    public function getSenha()
-    {
-        return $this->senha;
-    }
-
-
-
 }
