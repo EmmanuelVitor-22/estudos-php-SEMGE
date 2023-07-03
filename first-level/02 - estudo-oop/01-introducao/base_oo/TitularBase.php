@@ -1,8 +1,7 @@
 <?php
 
-namespace base_oo\estudo-oop\01-introducao\base_oo;
 
-use base_oo\estudouse; base_oo\estudorequire_once "CpfBase.php";
+require_once "CpfBase.php";
 
 class TitularBase
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace base_oo\estudo-oop\01-introducao\base_oo;
 
-use base_oo\estudoclass ContaBase
+
+class ContaBase
 {
     //modificadores de acesso (private, protected, public)
     private TitularBase $titular;

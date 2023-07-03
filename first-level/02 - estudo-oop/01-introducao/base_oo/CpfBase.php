@@ -1,6 +1,5 @@
 <?php
 
-namespace base_oo\estudo-oop\01-introducao\base_oo;
 class CpfBase
 {
 

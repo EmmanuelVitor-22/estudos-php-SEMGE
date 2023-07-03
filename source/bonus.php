@@ -1,25 +1,18 @@
 <?php
 
 require_once "resource.php";
-<<<<<<< HEAD
-=======
 
 use Model\Account\Employee\Developer;
 use Model\Account\Employee\Manager;
 use Model\CPF;
 use Service\BonusService;
 
-$employee =  new Developer(new CPF("123.232.545-66"),"Ruan Nuit", "Dev",1000);
-$manager=  new Manager(new CPF("123.232.545-46"),"Laure Nuit", "Gerente",3000);
-$manager=  new Manager(new CPF("123.232.545-46"),"Laure Nuit", "Gerente",3000);
-$manager=  new Manager(new CPF("123.232.545-46"),"Laure Nuit", "Gerente",3000);
->>>>>>> 09894aaa70b016fa5be5c940651f0eacd9e98733
+$employee = new Developer(new CPF("123.232.545-66"), "Ruan Nuit", "Dev", 1000);
+$manager = new Manager(new CPF("123.232.545-46"), "Laure Nuit", "Gerente", 3000);
+$manager = new Manager(new CPF("123.232.545-46"), "Laure Nuit", "Gerente", 3000);
+$manager = new Manager(new CPF("123.232.545-46"), "Laure Nuit", "Gerente", 3000);
 
-use Employee\Developer;
-use Employee\Director;
-use Employee\Manager;
-use Model\CPF;
-use Service\BonusService;
+
 
 $employee = new Developer(new CPF("123.232.545-66"), "Ruan Nuit", "Dev", 1000);
 $manager = new Manager(new CPF("123.232.545-46"), "Laure Nuit", "Gerente", 3000);
