@@ -10,7 +10,7 @@ class Contato{
     private string $nome;
     private string $telefone;
 
-    public function __construct( string $nome, string $telefone)
+    public function __construct( string $nome="", string $telefone="")
     {
         $this->id = self::$count++;
         $this->nome = $nome;
